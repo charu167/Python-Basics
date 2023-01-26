@@ -11,10 +11,10 @@ class HashTable:
             h+=ord(i)
         return h%self.size
 
-    def insert(self, key, value):
+    def __setitem__(self, key, value):
         self.arr[self.Hash(key)] = value
 
-    def get(self, key):
+    def __getitem__(self, key):
         if self.arr[self.Hash(key)] != None:
             return self.arr[self.Hash(key)]
         else:
@@ -25,9 +25,11 @@ class HashTable:
 
 
 h = HashTable(100)
-h.insert('Aditi', 1)
-h.insert('Ashish', 2)
-h.insert('Akriti', 3)
-h.insert('Atharv', 4)
 
-print(h.get('Atharv'))
+h['Aditi'] = 1
+h['Ashish'] = 2
+h['Akriti'] = 3
+h['Atharv'] = 4
+
+
+print(h['Atharv'])
