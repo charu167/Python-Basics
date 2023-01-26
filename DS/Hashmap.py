@@ -20,7 +20,7 @@ class HashTable:
         else:
             return 'No records found'
         
-    def delete(self, key):
+    def __delitem__(self, key):
         self.arr[self.Hash(key)] = None
 
 
